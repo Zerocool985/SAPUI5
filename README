@@ -1,12 +1,5 @@
 Small hobby project to get into SAPUI5 and Fiori. The idea is to get data from a CDS view via a ODATA service and list the users CAT2 project times based on the field "raufnr"
 
-<<<<<<< HEAD
 =======
 Development is still ongoing
 =======
-=======
-<<<<<<< HEAD
-Development is still ongoing
-=======
->>>>>>> 747221d5249d0613438134f7451c64b38a7d1f65
->>>>>>> 9060fe9780ab303e77aa9a8e170afbdd744468f6
