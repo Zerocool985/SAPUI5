@@ -1,0 +1,2 @@
+Small hobby project to get into SAPUI5 and Fiori. The idea is to get data from a CDS view via a ODATA service and list the users CAT2 project times based on the field "raufnr"
+
