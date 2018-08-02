@@ -1,0 +1,83 @@
+<!--controllerName="sap.ui.bookedTimes.wt.controller.List" -->
+<mvc:View
+	controllerName="sap.ui.bookedTimes.wt.controller.List"
+	id="listview"
+	xmlns:l="sap.ui.layout"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:fb="sap.ui.comp.filterbar"
+	xmlns:core="sap.ui.core"
+	xmlns="sap.m">
+<!--		<List
+		headerText="{i18n>invoiceListTitle}"
+		class="sapUiResponsiveMargin"
+		width="auto"
+		items="{zCatsTestJ>/d/results}">
+		<items>
+			<ObjectListItem
+				title="{zCatsTestJ>catshours}"/>
+		</items>
+	</List>
+-->
+
+	<l:VerticalLayout width="100%">
+		<fb:FilterBar reset="onReset" search="onSearch" showRestoreButton="true" showClearButton="true" filterBarExpanded="true">
+			<fb:filterItems>
+				<fb:FilterItem name="A" label="IA-Number" mandatory="true">
+					<fb:control>
+						<Input/>
+					</fb:control>				
+				</fb:FilterItem>
+				<fb:FilterItem name="B" label="from Date">
+					<fb:control>
+						<DatePicker/>
+					</fb:control>				
+				</fb:FilterItem>
+				
+				<fb:FilterItem name="C" label="to Date" labelTooltip="Tooltip Example" >
+					<fb:control>
+						<DatePicker/>
+					</fb:control>				
+				</fb:FilterItem>				
+			</fb:filterItems>
+	    </fb:FilterBar>		
+	</l:VerticalLayout>
+	
+		<Table id="exportTable" inset="false" growing="true" growingThreshold="700" visible="true"
+		items="{
+			path : 'view>/d/results',
+			filters : [
+				{ path : 'raufnr', operator : 'EQ', value1 : '6000007'}
+			]
+		}">
+			<headerToolbar>
+				<OverflowToolbar>
+					<ToolbarSpacer />
+					<Button icon="sap-icon://excel-attachment" press="onExport"/>
+				</OverflowToolbar>
+			</headerToolbar>
+			<columns>
+				<Column>
+					<Text text="IA-Nummer" />
+				</Column>
+				<Column>
+					<Text text="Bezeichnung" />
+				</Column>
+				<Column>
+					<Text text="Datum" />
+				</Column>
+				<Column hAlign="End">
+					<Text text="Zeit" />
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem>
+					<cells>
+						<ObjectIdentifier title="{view>raufnr}" />
+						<Text id="tText" text="{view>ktext}" />
+						<Text text="{path: 'view>workdate', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'dd.MM.yyyy' } }" />
+						<Text text="{view>catshours}" />
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+</mvc:View>

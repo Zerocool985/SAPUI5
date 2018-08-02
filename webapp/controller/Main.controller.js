@@ -1,0 +1,1 @@
+sap.ui.define([   "sap/ui/core/mvc/Controller",   "sap/m/MessageToast"   ], function (Controller) {   "use strict";   return Controller.extend("sap.ui.bookedTimes.wt.controller.Main", {	 		onInit   : function () {			//this.getOwnerComponent().openHelloDialog();			//this.getView().createId("mainview");			//console.log(this.getView());		}   });});

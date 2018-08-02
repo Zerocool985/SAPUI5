@@ -1,0 +1,38 @@
+{
+	"d": {
+		"results": [{
+			"status": "30",
+			"skostl": "0001",
+			"catshours": "2.50",
+			"ktext": "test1",
+			"counter": "000003484040",
+			"mandt": "101",
+			"pernr": "00015822",
+			"usrid": "AW15822",
+			"workdate": "\/Date(1477267200000)\/",
+			"raufnr": "6000025"
+		}, {
+			"status": "30",
+			"skostl": "0001",
+			"catshours": "8.00",
+			"ktext": "test2",
+			"counter": "000002919281",
+			"mandt": "101",
+			"pernr": "1234",
+			"usrid": "de1",
+			"workdate": "\/Date(1441065600000)\/",
+			"raufnr": "0815"
+		}, {
+			"status": "30",
+			"skostl": "0001",
+			"catshours": "8.00",
+			"ktext": "test1",
+			"counter": "000002919281",
+			"mandt": "101",
+			"pernr": "00015822",
+			"usrid": "AW15822",
+			"workdate": "\/Date(1441065600000)\/",
+			"raufnr": "6000007"
+		}]
+	}
+}

@@ -1,0 +1,23 @@
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+	<edmx:Reference
+		Uri="https://vtn1.de.kaercher.com:443/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='R3TG1_101')/$value"
+		xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"><edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/></edmx:Reference>
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema Namespace="ZCATS_TEST_CDS" xml:lang="de" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+			<EntityType Name="ZAUFK_testType" sap:content-version="1">
+				<Key><PropertyRef Name="aufnr"/></Key><Property Name="aufnr" Type="Edm.String" Nullable="false" MaxLength="12" sap:display-format="UpperCase" sap:label="Auftrag"/><Property Name="mandt" Type="Edm.String" MaxLength="3" sap:label="Mandant"/><Property Name="ktext" Type="Edm.String" MaxLength="40" sap:label="Kurztext"/></EntityType>
+			<EntityType Name="ZCATS_TESTType" sap:content-version="1">
+				<Key><PropertyRef Name="counter"/></Key><Property Name="status" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="Bearbeitungsstatus"/><Property Name="skostl" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Senderkostenstelle"/><Property Name="catshours" Type="Edm.Decimal" Precision="4" Scale="2" sap:label="Stunden"/><Property Name="ktext" Type="Edm.String" MaxLength="40" sap:label="Kurztext"/><Property Name="counter" Type="Edm.String" Nullable="false" MaxLength="12" sap:display-format="UpperCase" sap:label="Zähler"/><Property Name="mandt" Type="Edm.String" MaxLength="3" sap:label="Mandant"/><Property Name="pernr" Type="Edm.String" MaxLength="8" sap:display-format="NonNegative" sap:label="Personalnummer"/><Property Name="usrid" Type="Edm.String" MaxLength="30" sap:display-format="UpperCase" sap:label="System-ID"/><Property Name="workdate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Datum"/><Property Name="raufnr" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Empfängerauftrag"/><NavigationProperty Name="to_OrderDescr" Relationship="ZCATS_TEST_CDS.assoc_B5AC6B353B1518A5E1D305A119BD9BF0"
+					FromRole="FromRole_assoc_B5AC6B353B1518A5E1D305A119BD9BF0" ToRole="ToRole_assoc_B5AC6B353B1518A5E1D305A119BD9BF0"/></EntityType>
+			<Association Name="assoc_B5AC6B353B1518A5E1D305A119BD9BF0" sap:content-version="1"><End Type="ZCATS_TEST_CDS.ZCATS_TESTType" Multiplicity="1" Role="FromRole_assoc_B5AC6B353B1518A5E1D305A119BD9BF0"/><End Type="ZCATS_TEST_CDS.ZAUFK_testType" Multiplicity="1" Role="ToRole_assoc_B5AC6B353B1518A5E1D305A119BD9BF0"/></Association>
+			<EntityContainer Name="ZCATS_TEST_CDS_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx"><EntitySet Name="ZAUFK_test" EntityType="ZCATS_TEST_CDS.ZAUFK_testType" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:content-version="1"/><EntitySet Name="ZCATS_TEST" EntityType="ZCATS_TEST_CDS.ZCATS_TESTType" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:content-version="1"/>
+				<AssociationSet Name="assoc_B5AC6B353B1518A5E1D305A119BD9BF0" Association="ZCATS_TEST_CDS.assoc_B5AC6B353B1518A5E1D305A119BD9BF0"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="ZCATS_TEST" Role="FromRole_assoc_B5AC6B353B1518A5E1D305A119BD9BF0"/><End EntitySet="ZAUFK_test" Role="ToRole_assoc_B5AC6B353B1518A5E1D305A119BD9BF0"/></AssociationSet>
+			</EntityContainer><atom:link rel="self" href="https://vtn1.de.kaercher.com:443/sap/opu/odata/sap/ZCATS_TEST_CDS/$metadata"
+				xmlns:atom="http://www.w3.org/2005/Atom"/><atom:link rel="latest-version" href="https://vtn1.de.kaercher.com:443/sap/opu/odata/sap/ZCATS_TEST_CDS/$metadata"
+				xmlns:atom="http://www.w3.org/2005/Atom"/></Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

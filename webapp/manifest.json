@@ -1,0 +1,103 @@
+{
+	"_version": "1.4.0",
+	"sap.app": {
+		"_version": "1.1.0",
+		"id": "sap.ui.bookedTimes.wt",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"title": "{{BookedTimes}}",
+		"description": "{{Booked_project_times}}",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"ach": "SAP",
+		"dataSources": {
+			"ZCATS_TEST_CDS": {
+				"uri": "/sap/opu/odata/sap/ZCATS_TEST_CDS/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/ZCATS_TEST_CDS/metadata.xml"
+				}
+			}
+		},
+		"sourceTemplate": {
+			"id": "servicecatalog.connectivityComponentForManifest",
+			"version": "0.0.0"
+		}
+	},
+	"sap.ui": {
+		"_version": "1.1.0",
+		"technology": "UI5",
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": [
+			"sap_bluecrystal",
+			"sap_hcb",
+			"sap_belize"
+		],
+		"icons": {
+			"icon": "sap-icon://accidental-leave",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": "",
+			"favIcon": ""
+		}
+	},
+	"sap.ui5": {
+		
+		"rootView" : {
+			"viewName":"sap.ui.bookedTimes.wt.view.Main", 
+			"id":    "mainview", "type": "XML" },
+
+		
+		"dependencies": {
+			"minUI5Version": "1.30",
+			"libs": {
+				"sap.m": {}
+			}
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "sap.ui.bookedTimes.wt.i18n.i18n"
+				}
+			},
+			"zCatsTestJ": {
+				"type": "sap.ui.model.json.JSONModel",
+				"uri": "ZCATS_TESTJ.json",
+				"preload": false
+			},
+			"zCatsOdata": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "OneWay",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "ZCATS_TEST_CDS",
+				"preload": true
+			},
+			"": {
+				"uri": "/sap/opu/odata/sap/ZCATS_TEST_CDS/",
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "OneWay",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "ZCATS_TEST_CDS",
+				"preload": true
+			}
+		},
+		"contentDensities": {
+			"cozy": true,
+			"compact": false
+		}
+	}
+}

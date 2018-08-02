@@ -1,0 +1,37 @@
+{
+  "projectType": [
+    "sap.watt.uitools.ide.fiori",
+    "sap.watt.uitools.ide.web"
+  ],
+  "beautifier": {
+    "keep_array_indentation": false,
+    "break_chained_methods": false,
+    "space_before_conditional": true,
+    "unescape_strings": false,
+    "tab_size": "1",
+    "max_preserve_newlines": "2",
+    "wrap_line_length": "140",
+    "brace_style": "collapse"
+  },
+  "translation": {
+    "translationDomain": "",
+    "supportedLanguages": "de,en",
+    "defaultLanguage": "de",
+    "defaultI18NPropertyFile": "",
+    "resourceModelName": ""
+  },
+  "generation": [
+    {
+      "templateId": "servicecatalog.connectivityComponent",
+      "templateVersion": "0.0.0",
+      "dateTimeStamp": "Sat, 07 Jul 2018 14:52:11 GMT"
+    }
+  ],
+  "mockpreview": {
+    "mockUri": "",
+    "metadataFilePath": "",
+    "loadJSONFiles": false,
+    "loadCustomRequests": false,
+    "mockRequestsFilePath": ""
+  }
+}
