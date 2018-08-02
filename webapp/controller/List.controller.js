@@ -2,7 +2,6 @@ sap.ui.define([
 		'jquery.sap.global',
 		'sap/ui/core/mvc/Controller',
 		'sap/ui/model/json/JSONModel',
-		'sap/ui/core/util/MockServer',
 		"sap/ui/model/Filter",
 		"sap/ui/model/FilterOperator",
 		"sap/ui/model/FilterType"
