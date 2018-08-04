@@ -1,0 +1,38 @@
+@AbapCatalog.sqlViewName: 'ZCATSITEMS'
+@AbapCatalog.compiler.compareFilter: true
+@AccessControl.authorizationCheck: #CHECK
+@EndUserText.label: 'CATS test'
+@OData.publish: true
+
+define view ZCATS_TEST 
+//with parameters     
+//    p_uname : uname
+//   @<Environment.systemField : #USER 
+//s_date:
+//e_date:
+//@<Environment.systemField : #USER 
+as select from catsdb 
+
+    association [1..1] to ZAUFK_test as _OrderDescr
+                on $projection.raufnr=_OrderDescr.aufnr
+    association [1..1] to pa0105 as _User
+                on $projection.pernr=_User.pernr             
+                
+// "left outer join aufk on catsdb.raufnr=aufk.aufnr
+{//catsdb 
+                                              key counter,
+                                              catsdb.mandt,
+                                              pernr,                                              
+                                              _User.usrid,
+                                              workdate,
+                                              catsdb.raufnr,
+                                              status,
+                                              skostl,
+                                              catshours,
+                                              _OrderDescr,
+                                              _OrderDescr.ktext
+                                               
+                                               
+}
+//add 
+where _User.usrid = $session.user  

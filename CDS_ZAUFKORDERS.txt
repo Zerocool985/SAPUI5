@@ -1,0 +1,10 @@
+@AbapCatalog.sqlViewName: 'ZAUFKORDERS'
+@AbapCatalog.compiler.compareFilter: true
+@AccessControl.authorizationCheck: #CHECK
+@EndUserText.label: 'CO Order Master'
+define view ZAUFK_test as select from aufk {//AUFK 
+                                            key aufnr,
+                                            mandt, 
+                                            ktext
+    
+}
